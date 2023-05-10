@@ -11,7 +11,7 @@
     </parent>
     <groupId>xyz.silencelurker</groupId>
     <artifactId>fast-dubbo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.1-RELEASE</version>
     <name>Silence_Lurker</name>
     <description>Fast Dubbo Develop toolkit for server</description>
     <packaging>pom</packaging>
@@ -42,6 +42,32 @@
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.alibaba.spring</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>1.0.11</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.31</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>hessian-lite</artifactId>
+            <version>3.2.13</version>
+        </dependency>
+
+        <!-- <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.38</version>
+        </dependency> -->
+
 
         <dependency>
             <groupId>org.apache.dubbo</groupId>
@@ -144,9 +170,11 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
+
                 <configuration>
+                    <jdk>11</jdk>
                     <serverId>snapshot</serverId>
                     <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
@@ -192,7 +220,7 @@
             <name>Apache Development Snapshot Repository</name>
             <url>https://repository.apache.org/content/repositories/snapshots</url>
             <releases>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
@@ -204,7 +232,7 @@
         <profile>
             <id>release</id>
             <activation>
-                <jdk>17</jdk>
+                <jdk>15</jdk>
             </activation>
             <properties>
                 <additionalparam>-Xdoclint:none</additionalparam>
@@ -213,7 +241,7 @@
             <build>
                 <plugins>
                     <!-- Source -->
-                    <plugin>
+                    <!-- <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
                         <executions>
@@ -232,7 +260,7 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
+                    </plugin> -->
                     <!-- Gpg Signature -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -251,11 +279,11 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.8</version>
+                        <version>1.6.13</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>release</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
                     </plugin>

@@ -6,17 +6,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.2</version>
+        <version>3.0.6</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>xyz.silencelurker</groupId>
     <artifactId>fast-dubbo</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>Silence_Lurker</name>
-    <description>Fast Dubbo Develop tool package</description>
+    <description>Fast Dubbo Develop toolkit for server</description>
     <packaging>pom</packaging>
     <properties>
-        <dubbo.version>[3.0.10,)</dubbo.version>
+        <dubbo.version>[3.2.1,)</dubbo.version>
         <java.version>17</java.version>
     </properties>
 

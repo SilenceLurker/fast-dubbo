@@ -11,12 +11,12 @@
     </parent>
     <groupId>xyz.silencelurker</groupId>
     <artifactId>fast-dubbo</artifactId>
-    <version>0.1.1-RELEASE</version>
+    <version>0.1.3</version>
     <name>Silence_Lurker</name>
     <description>Fast Dubbo Develop toolkit for server</description>
     <packaging>pom</packaging>
     <properties>
-        <dubbo.version>[3.2.1,)</dubbo.version>
+        <dubbo.version>[3.2,)</dubbo.version>
         <java.version>17</java.version>
     </properties>
 
@@ -223,7 +223,7 @@
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
